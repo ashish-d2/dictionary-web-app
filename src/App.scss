@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 736px;
+  min-width: 327px;
+  margin-top: 58px;
+  margin-right: 24px;
+  margin-left: 24px;
+
+  transition: margin-top 0.3s ease;
+
+  // Tablet (between 768px and 1024px)
+  @media (max-width: 1024px) and (min-width: 768px) {
+    margin-top: 58px;
+  }
+
+  // Mobile (max-width: 767px)
+  @media (max-width: 767px) {
+    margin-top: 24px; // Mobile version
+  }
+}

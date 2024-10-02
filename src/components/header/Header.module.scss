@@ -1,0 +1,34 @@
+@use "./../../scss/colors" as c;
+@use "./../../scss/text" as t;
+
+header {
+  height: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerRight {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.fontSelector {
+  .fontName {
+    margin-right: 1em;
+  }
+
+  .fontName_light {
+    color: c.$lt-primary;
+  }
+
+  .fontName_sans {
+    @include t.textBoldSans(Inter, 0.875rem);
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 100%;
+  background-color: c.$gray-2;
+}
