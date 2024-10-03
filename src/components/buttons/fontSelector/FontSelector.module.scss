@@ -1,0 +1,31 @@
+@use "./../../../scss/colors" as c;
+@use "./../../../scss/text" as t;
+
+.fontSelector_wrapper {
+  position: relative;
+
+  .fontSelector {
+    appearance: none;
+    border: none;
+    width: fit-content;
+    padding-right: 2em;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .fontSelector_sansSerif {
+    @include t.textBoldSans(Inter, 0.875rem);
+  }
+
+  .fontSelector_lt {
+    color: c.$lt-primary;
+  }
+}
+
+.arrowBtn {
+  position: absolute;
+  margin-left: -1em;
+  display: inline-block;
+}
