@@ -19,11 +19,11 @@ header {
   }
 
   .fontName_light {
-    color: c.$lt-primary;
+    color: c.$lt-primary-black;
   }
 
   .fontName_sans {
-    @include t.textBoldSans(Inter, 0.875rem);
+    @include t.textBoldSans(0.875rem);
   }
 }
 

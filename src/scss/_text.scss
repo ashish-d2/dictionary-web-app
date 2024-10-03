@@ -1,7 +1,11 @@
 @use "./colors" as c;
 
-@mixin textBoldSans($font, $size) {
-  font-family: $font, sans-serif;
+@mixin textBoldSans($size) {
+  font-family: Inter, sans-serif;
   font-size: $size;
   font-weight: 700;
+}
+
+.sansSerif {
+  font-family: Inter, sans-serif;
 }

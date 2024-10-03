@@ -16,11 +16,11 @@
   }
 
   .fontSelector_sansSerif {
-    @include t.textBoldSans(Inter, 0.875rem);
+    @include t.textBoldSans(0.875rem);
   }
 
   .fontSelector_lt {
-    color: c.$lt-primary;
+    color: c.$lt-primary-black;
   }
 }
 

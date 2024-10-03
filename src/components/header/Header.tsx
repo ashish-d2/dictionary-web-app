@@ -2,7 +2,6 @@ import styles from "./Header.module.scss";
 
 // logo imports
 import { ReactComponent as MainLogo } from "./../../assets/images/logo.svg";
-import { ReactComponent as ArrowLogo } from "./../../assets/images/icon-arrow-down.svg";
 import { ReactComponent as MoonLogo } from "./../../assets/images/icon-moon.svg";
 
 // Component imports
@@ -12,7 +11,7 @@ import FontSelector from "../buttons/fontSelector/FontSelector";
 const Header = function () {
   return (
     <header>
-      <MainLogo />
+      <MainLogo height="32px" width="28.05px" />
 
       <div className={styles.headerRight}>
         <FontSelector />
