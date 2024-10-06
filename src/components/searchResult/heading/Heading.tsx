@@ -6,8 +6,8 @@ const Heading = function () {
   return (
     <div className={styles.headingContainer}>
       <div className={styles.heading}>
-        <h1 className={styles.mainHeading}>Keyboard</h1>
-        <p className={styles.pronounce}>/ˈkiːbɔːd/</p>
+        <h1 className={`sansSerif light ${styles.mainHeading}`}>Keyboard</h1>
+        <p className={`sansSerif highlight ${styles.pronounce}`}>/ˈkiːbɔːd/</p>
       </div>
 
       <PlayBtn />

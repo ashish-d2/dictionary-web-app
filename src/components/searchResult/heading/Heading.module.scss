@@ -1,0 +1,33 @@
+@use "./../../../scss/colors" as c;
+@use "./../../../scss/text" as t;
+
+.headingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5em;
+  transition: margin-top 0.3s ease;
+
+  @media (min-width: 768px) {
+    margin-top: 2.7em;
+  }
+}
+
+.heading {
+  .mainHeading {
+    @include t.headingLarge(2rem);
+    margin-bottom: 8px;
+
+    @media (min-width: 768px) {
+      @include t.headingLarge();
+    }
+  }
+
+  .pronounce {
+    @include t.bodyMedium();
+
+    @media (min-width: 768px) {
+      @include t.headingMedium();
+    }
+  }
+}
