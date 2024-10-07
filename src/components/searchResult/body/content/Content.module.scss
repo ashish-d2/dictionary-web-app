@@ -34,6 +34,10 @@
   @include t.headingSmall(1rem);
   color: c.$gray-1;
   margin-bottom: 1em;
+
+  @media (min-width: 768px) {
+    @include t.headingSmall(1.25rem);
+  }
 }
 
 .list {
@@ -58,5 +62,35 @@
     left: -20px;
     border-radius: 50%;
     background-color: c.$violet;
+  }
+
+  @media (min-width: 768px) {
+    li {
+      @include t.bodyMedium();
+    }
+  }
+}
+
+.footer {
+  margin-top: 1.5em;
+  display: inline-block;
+  @include t.bodyMedium(1rem);
+
+  p {
+    display: inline;
+    margin-right: 1.5em;
+  }
+
+  p:first-child {
+    color: c.$gray-1;
+  }
+
+  p:last-child {
+    color: c.$violet;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    @include t.headingSmall(1.25rem);
   }
 }

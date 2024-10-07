@@ -26,6 +26,11 @@ const Content = function () {
           </li>
         </ul>
       </div>
+
+      <div className={styles.footer}>
+        <p>Synonyms</p>
+        <p>electronic keyboard</p>
+      </div>
     </>
   );
 };
