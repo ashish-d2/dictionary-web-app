@@ -6,6 +6,7 @@ const Body = function () {
   return (
     <div className={`sansSerif ${styles.body}`}>
       <Content />
+      <Content />
     </div>
   );
 };

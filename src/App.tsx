@@ -5,6 +5,7 @@ import SearchResult from "./components/searchResult/SearchResult";
 
 import Heading from "./components/searchResult/heading/Heading";
 import Body from "./components/searchResult/body/Body";
+import Footer from "./components/searchResult/footer/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <SearchResult>
           <Heading />
           <Body />
+          <Footer />
         </SearchResult>
       </main>
     </div>
