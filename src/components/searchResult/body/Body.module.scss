@@ -1,0 +1,8 @@
+.body {
+  margin: 2em 0;
+  transition: margin 0.3s ease;
+
+  @media (min-width: 768px) {
+    margin: 2.5em 0;
+  }
+}

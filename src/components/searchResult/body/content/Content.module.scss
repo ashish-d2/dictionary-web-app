@@ -1,0 +1,62 @@
+@use "./../../../../scss/colors" as c;
+@use "./../../../../scss/text" as t;
+
+.subHeading {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  transition: margin-bottom 0.3s ease;
+
+  h2 {
+    @include t.bodyMedium();
+    font-weight: 700;
+    font-style: italic;
+    color: c.$lt-primary-black;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 2.5em;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: c.$gray-2;
+}
+
+.content_heading {
+  @include t.headingSmall(1rem);
+  color: c.$gray-1;
+  margin-bottom: 1em;
+}
+
+.list {
+  margin-left: 1.2em;
+
+  li {
+    list-style-type: none;
+    position: relative;
+    @include t.bodyMedium(0.937rem);
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 0.812em;
+  }
+
+  li::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 8px;
+    left: -20px;
+    border-radius: 50%;
+    background-color: c.$violet;
+  }
+}
