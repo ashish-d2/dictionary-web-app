@@ -5,7 +5,7 @@ import SearchResult from "./components/searchResult/SearchResult";
 
 import Heading from "./components/searchResult/heading/Heading";
 import Body from "./components/searchResult/body/Body";
-import Footer from "./components/searchResult/footer/Footer";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (

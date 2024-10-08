@@ -1,5 +1,7 @@
 import styles from "./Footer.module.scss";
 
+import { ReactComponent as LinkIcon } from "./../../assets/images/icon-new-window.svg";
+
 const Footer = function () {
   return (
     <div className={styles.footer}>
@@ -9,6 +11,7 @@ const Footer = function () {
         <a href="#" className="light">
           https://en.wiktionary.org/wiki/keyboard
         </a>
+        <LinkIcon />
       </div>
     </div>
   );

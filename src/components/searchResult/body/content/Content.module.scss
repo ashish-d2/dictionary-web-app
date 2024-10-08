@@ -53,7 +53,12 @@
     margin-bottom: 0.812em;
   }
 
-  li::before {
+  .example {
+    color: c.$gray-1;
+    list-style-type: none;
+  }
+
+  .list_data::before {
     content: "";
     width: 5px;
     height: 5px;

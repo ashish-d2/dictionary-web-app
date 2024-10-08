@@ -1,7 +1,9 @@
-@use "./../../../scss/colors" as c;
-@use "./../../../scss/text" as t;
+@use "./../../scss/colors" as c;
+@use "./../../scss/text" as t;
+
 .footer {
   margin-bottom: 5em;
+
   .divider {
     width: 100%;
     height: 1px;
@@ -20,5 +22,13 @@
   a {
     appearance: none;
     @include t.bodySmall();
+    margin-right: 9px;
+  }
+
+  @media (min-width: 768px) {
+    .source {
+      display: inline;
+      margin-right: 1.25em;
+    }
   }
 }
