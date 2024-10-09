@@ -11,7 +11,7 @@ const Footer = function () {
         <a href="#" className="light">
           https://en.wiktionary.org/wiki/keyboard
         </a>
-        <LinkIcon />
+        <LinkIcon className={styles.linkIcon} />
       </div>
     </div>
   );

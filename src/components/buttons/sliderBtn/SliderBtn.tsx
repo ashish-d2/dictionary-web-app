@@ -11,7 +11,9 @@ const SliderBtn = function () {
 
   return (
     <button
-      className={`${styles.sliderContainer} ${styles.sliderContainer_lt}`}
+      className={`${styles.sliderContainer} ${
+        sliderActive ? styles.sliderContainer_dt : styles.sliderContainer_lt
+      }`}
       onClick={handleSliderClick}
     >
       <span

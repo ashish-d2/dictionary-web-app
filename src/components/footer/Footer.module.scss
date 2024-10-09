@@ -25,6 +25,14 @@
     margin-right: 9px;
   }
 
+  .linkIcon {
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: c.$violet;
+  }
+
   @media (min-width: 768px) {
     .source {
       display: inline;

@@ -2,6 +2,7 @@
 @use "./../../scss//text" as t;
 
 .search {
+  cursor: pointer;
   width: 100%;
   height: 48px;
   border-radius: 16px;
@@ -11,6 +12,14 @@
   padding: 0 1.5em;
   margin-top: 1.5em;
   transition: margin-top 0.3s ease;
+
+  &.focused {
+    outline: 1px solid c.$violet;
+  }
+
+  &:hover {
+    outline: 1px solid c.$violet;
+  }
 
   // Tablet and desktop
   @media (min-width: 768px) {

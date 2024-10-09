@@ -7,7 +7,7 @@ import Heading from "./components/searchResult/heading/Heading";
 import Body from "./components/searchResult/body/Body";
 import Footer from "./components/footer/Footer";
 
-import NoResultFound from "./components/noResultFound/NoResultFound";
+// import NoResultFound from "./components/noResultFound/NoResultFound";
 
 function App() {
   return (
@@ -15,12 +15,11 @@ function App() {
       <main className="main-container">
         <Header />
         <SearchField />
-        <NoResultFound />
-        {/* <SearchResult>
+        <SearchResult>
           <Heading />
           <Body />
-          <Footer />
-        </SearchResult> */}
+        </SearchResult>
+        <Footer />
       </main>
     </div>
   );

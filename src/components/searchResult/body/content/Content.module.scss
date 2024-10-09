@@ -95,6 +95,12 @@
     font-weight: 700;
   }
 
+  p:last-child:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: c.$violet;
+  }
+
   @media (min-width: 768px) {
     @include t.headingSmall(1.25rem);
     margin: 2.5em;
