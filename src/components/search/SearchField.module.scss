@@ -33,6 +33,20 @@
   background-color: c.$lt-primary-gray;
 }
 
+.error {
+  outline: 1px solid c.$orange;
+}
+
+.errorMessage {
+  margin-top: 8px;
+  @include t.headingSmall(0.875rem);
+  color: c.$orange;
+
+  @media (min-width: 768px) {
+    @include t.headingSmall();
+  }
+}
+
 .searchField {
   width: 90%;
   height: 100%;
@@ -44,6 +58,16 @@
   }
 
   &::placeholder {
-    font-weight: 400;
+    @include t.headingSmall(0.875rem);
+    color: c.$black-3;
+    opacity: 25%;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    &::placeholder {
+      @include t.headingSmall();
+      font-weight: 700;
+    }
   }
 }
