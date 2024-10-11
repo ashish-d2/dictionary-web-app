@@ -1,11 +1,15 @@
+import { useTheme } from "./../../../context/ThemeContext";
+
 import styles from "./SliderBtn.module.scss";
 
 import { useState } from "react";
 
 const SliderBtn = function () {
+  const { toggleTheme } = useTheme();
   const [sliderActive, setSliderActive] = useState(false);
 
   const handleSliderClick = function () {
+    toggleTheme();
     setSliderActive(!sliderActive);
   };
 

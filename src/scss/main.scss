@@ -1,4 +1,4 @@
-@use "./colors";
+@use "./colors" as *;
 @use "./text";
 
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
@@ -17,4 +17,9 @@ input {
   outline: none;
   border: none;
   background: none;
+}
+
+.dark {
+  background-color: $black-1;
+  transition: background-color 0.3s ease;
 }
