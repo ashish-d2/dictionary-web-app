@@ -17,8 +17,14 @@ $orange: #ff5252;
 $lt-primary-black: $black-3;
 $lt-primary-gray: $gray-3;
 
-.light {
+.text-light {
   color: $lt-primary-black;
+  transition: color 0.3s ease;
+}
+
+.text-dark {
+  transition: color 0.3s ease;
+  color: $white;
 }
 
 .highlight {

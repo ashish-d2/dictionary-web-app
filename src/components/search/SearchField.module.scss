@@ -11,6 +11,7 @@
   justify-content: space-between;
   padding: 0 1.5em;
   margin-top: 1.5em;
+  background-color: c.$lt-primary-gray;
   transition: margin-top 0.3s ease;
 
   &.focused {
@@ -29,8 +30,10 @@
   }
 }
 
-.search_lt {
-  background-color: c.$lt-primary-gray;
+.search_dt {
+  transition: background-color 0.3s ease;
+  background-color: c.$black-2;
+  color: c.$white;
 }
 
 .error {
@@ -56,10 +59,28 @@
   @media (min-width: 768px) {
     font-size: 1.25rem;
   }
+}
 
+.searchField_lt {
   &::placeholder {
     @include t.headingSmall(0.875rem);
     color: c.$black-3;
+    opacity: 25%;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    &::placeholder {
+      @include t.headingSmall();
+      font-weight: 700;
+    }
+  }
+}
+
+.searchField_dt {
+  &::placeholder {
+    @include t.headingSmall(0.875rem);
+    color: c.$white;
     opacity: 25%;
     font-weight: 700;
   }

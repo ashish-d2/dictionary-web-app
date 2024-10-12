@@ -1,6 +1,9 @@
 import styles from "./Content.module.scss";
+import { useTheme } from "../../../../context/ThemeContext";
 
 const Content = function () {
+  const { theme } = useTheme();
+
   return (
     <>
       <div className={styles.subHeading}>
@@ -10,7 +13,11 @@ const Content = function () {
 
       <div className={styles.content}>
         <h3 className={styles.content_heading}>Meaning</h3>
-        <ul className={`light ${styles.list}`}>
+        <ul
+          className={`${theme === "light" ? "text-light" : "text-dark"} ${
+            styles.list
+          }`}
+        >
           <li className={styles.list_data}>
             (etc.) A set of keys used to operate a typewriter, computer etc.
           </li>
