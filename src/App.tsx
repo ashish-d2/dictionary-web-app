@@ -25,6 +25,7 @@ function AppContent() {
           <Body />
         </SearchResult>
         <Footer />
+        {/* <NoResultFound /> */}
       </main>
     </div>
   );

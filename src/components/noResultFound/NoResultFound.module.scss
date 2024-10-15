@@ -2,11 +2,11 @@
 @use "./../../scss/text" as t;
 
 .notFound {
+  margin-top: 8.25em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   @include t.headingSmall();
 
   .icon {
