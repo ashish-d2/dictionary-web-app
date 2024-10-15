@@ -2,7 +2,7 @@ import styles from "./Header.module.scss";
 
 // logo imports
 import { ReactComponent as MainLogo } from "./../../assets/images/logo.svg";
-import { ReactComponent as MoonLogo } from "./../../assets/images/icon-moon.svg";
+import MoonIcon from "../icon/MoonIcon";
 
 // Component imports
 import SliderBtn from "../buttons/sliderBtn/SliderBtn";
@@ -19,7 +19,7 @@ const Header = function () {
         <div className={styles.divider}></div>
         <div>
           <SliderBtn />
-          <MoonLogo />
+          <MoonIcon />
         </div>
       </div>
     </header>

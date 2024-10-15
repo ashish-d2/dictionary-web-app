@@ -12,7 +12,6 @@
     @include t.bodyMedium();
     font-weight: 700;
     font-style: italic;
-    color: c.$lt-primary-black;
   }
 
   @media (min-width: 768px) {

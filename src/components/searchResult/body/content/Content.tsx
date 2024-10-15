@@ -7,7 +7,13 @@ const Content = function () {
   return (
     <>
       <div className={styles.subHeading}>
-        <h2 className="sansSerif">noun</h2>
+        <h2
+          className={`sansSerif ${
+            theme === "light" ? "text-light" : "text-dark"
+          }`}
+        >
+          noun
+        </h2>
         <div className={styles.line}></div>
       </div>
 
