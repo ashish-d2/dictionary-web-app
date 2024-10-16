@@ -10,6 +10,14 @@
   font-family: Inter, sans-serif;
 }
 
+.serif {
+  font-family: Lora, serif;
+}
+
+.mono {
+  font-family: Inconsolata, monospace;
+}
+
 // Design system
 @mixin headingLarge($size: 4rem) {
   font-size: $size;
