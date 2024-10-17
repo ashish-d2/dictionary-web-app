@@ -19,15 +19,13 @@
   .fonts {
     white-space: nowrap;
     margin-top: 0.875em;
-    font-size: 14px;
+    font-size: 0.875rem;
     position: absolute;
     top: 1.125em;
     left: -2em;
     padding: 1.2em 2em 1.2em 1.2em;
     border-radius: 20px;
-    background-color: #fff;
     z-index: 1;
-    box-shadow: 0 0 1em #f2f2f2;
 
     p {
       line-height: 24px;
@@ -38,4 +36,14 @@
       }
     }
   }
+}
+
+.font_light {
+  background-color: #fff;
+  box-shadow: 0 0 2em #f2f2f2;
+}
+
+.font_dark {
+  background-color: c.$black-2;
+  box-shadow: 0 0 2em c.$violet;
 }
