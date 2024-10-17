@@ -26,9 +26,16 @@
     padding: 1.2em 2em 1.2em 1.2em;
     border-radius: 20px;
     z-index: 1;
+    transition: font-size 0.3s ease, padding 0.3s ease, left 0.3s ease;
+
+    @media (min-width: 768px) {
+      font-size: 1.125rem;
+      padding: 1.33em 3.83em 1.33em 1.33em;
+      left: -3.83em;
+    }
 
     p {
-      line-height: 24px;
+      line-height: 1.714em;
 
       &:hover {
         color: c.$violet;
