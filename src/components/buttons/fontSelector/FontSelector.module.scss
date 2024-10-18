@@ -1,6 +1,10 @@
 @use "./../../../scss/colors" as c;
 @use "./../../../scss/text" as t;
 
+.fontSelector_container {
+  position: relative;
+}
+
 .fontSelector {
   display: flex;
   flex-wrap: nowrap;
@@ -10,37 +14,39 @@
   font-weight: 700;
   gap: 1.126em;
   cursor: pointer;
-  position: relative;
 
   @media (min-width: 768px) {
     font-size: 1.125rem;
   }
+}
 
-  .fonts {
-    white-space: nowrap;
-    margin-top: 0.875em;
-    font-size: 0.875rem;
-    position: absolute;
-    top: 1.125em;
-    left: -2em;
-    padding: 1.2em 2em 1.2em 1.2em;
-    border-radius: 20px;
-    z-index: 1;
-    transition: font-size 0.3s ease, padding 0.3s ease, left 0.3s ease;
+.fonts {
+  display: none;
+  white-space: nowrap;
+  margin-top: 0.875em;
+  font-size: 0.875rem;
+  font-weight: 700;
+  position: absolute;
+  top: 1.125em;
+  left: -2em;
+  padding: 1.2em 2em 1.2em 1.2em;
+  border-radius: 20px;
+  z-index: 1;
+  transition: font-size 0.3s ease, padding 0.3s ease, left 0.3s ease;
 
-    @media (min-width: 768px) {
-      font-size: 1.125rem;
-      padding: 1.33em 3.83em 1.33em 1.33em;
-      left: -3.83em;
-    }
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    padding: 1.33em 3.83em 1.33em 1.33em;
+    left: -3.83em;
+  }
 
-    p {
-      line-height: 1.714em;
+  p {
+    line-height: 1.714em;
+    cursor: pointer;
 
-      &:hover {
-        color: c.$violet;
-        transition: color 0.3s ease;
-      }
+    &:hover {
+      color: c.$violet;
+      transition: color 0.3s ease;
     }
   }
 }
@@ -53,4 +59,8 @@
 .font_dark {
   background-color: c.$black-2;
   box-shadow: 0 0 2em c.$violet;
+}
+
+.active {
+  display: block;
 }
