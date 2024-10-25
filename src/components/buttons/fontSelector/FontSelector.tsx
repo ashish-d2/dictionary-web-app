@@ -7,10 +7,10 @@ import { ReactComponent as ArrowLogo } from "./../../../assets/images/icon-arrow
 
 const FontSelector = function () {
   const { theme } = useTheme();
-  const [displayFonts, setDisplayFonts] = useState<boolean>(false);
+  const [displayDropDown, setDisplayDropDown] = useState<boolean>(false);
 
-  const handleDisplayFonts = function () {
-    setDisplayFonts((prevValue) => !prevValue);
+  const handleDropDown = function () {
+    setDisplayDropDown((prevValue) => !prevValue);
   };
 
   return (
@@ -19,7 +19,7 @@ const FontSelector = function () {
         theme === "light" ? "text-light" : "text-dark"
       }`}
     >
-      <div className={`${styles.fontSelector}`} onClick={handleDisplayFonts}>
+      <div className={`${styles.fontSelector}`} onClick={handleDropDown}>
         <p>Sans Serif</p>
 
         <ArrowLogo />
@@ -28,7 +28,7 @@ const FontSelector = function () {
       <div
         className={`${styles.fonts} ${
           theme === "light" ? styles.font_light : styles.font_dark
-        } ${displayFonts ? styles.active : ""}`}
+        } ${displayDropDown ? styles.active : ""}`}
       >
         <p className="sans-Serif">Sans Serif</p>
         <p className="serif">Serif</p>
