@@ -9,7 +9,7 @@ const PlayBtn = function () {
         height="100%"
         viewBox="0 0 75 75"
       >
-        <g fill="#A445ED" fill-rule="evenodd">
+        <g fill="#A445ED" fillRule="evenodd">
           <circle
             cx="37.5"
             cy="37.5"
