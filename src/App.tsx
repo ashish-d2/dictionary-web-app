@@ -12,6 +12,8 @@ import Footer from "./components/footer/Footer";
 // Context import
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
+import { SearchProvider } from "./context/SearchContext";
+
 function AppContent() {
   const { theme } = useTheme();
 
@@ -19,11 +21,16 @@ function AppContent() {
     <div className={`App sansSerif ${theme}`}>
       <main className="main-container">
         <Header />
-        <SearchField />
+
+        <SearchProvider>
+          <SearchField />
+        </SearchProvider>
+
         <SearchResult>
           <Heading />
           <Body />
         </SearchResult>
+
         <Footer />
         {/* <NoResultFound /> */}
       </main>
