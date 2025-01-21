@@ -1,9 +1,30 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
 interface searchContextType {
-  data: string[];
+  data: MainAPIOutput | undefined;
   getData: (value: string) => void;
 }
+
+// API type
+type MainAPIOutput = {
+  word: string;
+  meanings: Meanings[];
+  phonetic: string;
+  sourceUrls: string[];
+};
+
+type Meanings = {
+  partOfSpeech: string;
+  definitions: Definition[];
+  synonyms: string[];
+  antonyms: string[];
+};
+
+type Definition = {
+  definition: string;
+  synonyms: string[];
+  antonyms: string[];
+};
 
 // creating search context
 const SearchContext = createContext<searchContextType | undefined>(undefined);
@@ -12,13 +33,18 @@ const SearchContext = createContext<searchContextType | undefined>(undefined);
 const SearchProvider: React.FC<{ children: ReactNode }> = function ({
   children,
 }) {
-  const [data, setData] = useState<string[]>([]);
+  const [data, setData] = useState<MainAPIOutput>();
 
   // this function gets data from the API and stores in data
   const getData = function (word: string) {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then(([result]) => {
+        console.log(result);
+        const { word, meanings, phonetic, sourceUrls } = result;
+        setData({ word, meanings, phonetic, sourceUrls });
+      })
+      .catch((err) => console.error("Error while fetching data", err));
   };
 
   return (

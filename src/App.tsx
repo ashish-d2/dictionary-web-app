@@ -24,14 +24,14 @@ function AppContent() {
 
         <SearchProvider>
           <SearchField />
+
+          <SearchResult>
+            <Heading />
+            <Body />
+          </SearchResult>
+
+          <Footer />
         </SearchProvider>
-
-        <SearchResult>
-          <Heading />
-          <Body />
-        </SearchResult>
-
-        <Footer />
         {/* <NoResultFound /> */}
       </main>
     </div>
