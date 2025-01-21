@@ -17,6 +17,7 @@
   .mainHeading {
     @include t.headingLarge(2rem);
     margin-bottom: 8px;
+    text-transform: capitalize;
 
     @media (min-width: 768px) {
       @include t.headingLarge();

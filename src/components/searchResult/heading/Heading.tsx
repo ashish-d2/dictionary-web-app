@@ -8,8 +8,6 @@ const Heading = function () {
   const { theme } = useTheme();
   const { data } = useSearchContext();
 
-  console.log(data);
-
   return (
     <div className={styles.headingContainer}>
       <div className={styles.heading}>
@@ -18,9 +16,11 @@ const Heading = function () {
             theme === "light" ? "text-light" : "text-dark"
           } ${styles.mainHeading}`}
         >
-          Keyboard
+          {data ? data.word : ""}
         </h1>
-        <p className={`sansSerif highlight ${styles.pronounce}`}>/ˈkiːbɔːd/</p>
+        <p className={`sansSerif highlight ${styles.pronounce}`}>
+          {data ? data.phonetic : ""}
+        </p>
       </div>
 
       <PlayBtn />
