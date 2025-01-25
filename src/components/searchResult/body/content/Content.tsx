@@ -15,8 +15,6 @@ const Content: React.FC<ComponentProps> = function ({ contentData }) {
   const { theme } = useTheme();
   const { getData } = useSearchContext();
 
-  console.log(contentData);
-
   return (
     <>
       <div className={styles.subHeading}>
