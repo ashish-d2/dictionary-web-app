@@ -6,32 +6,35 @@ import SearchResult from "./components/searchResult/SearchResult";
 import Heading from "./components/searchResult/heading/Heading";
 import Body from "./components/searchResult/body/Body";
 import Footer from "./components/footer/Footer";
+import DefaultPage from "./components/defaultPage/DefaultPage";
 
 // import NoResultFound from "./components/noResultFound/NoResultFound";
 
 // Context import
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
-
 import { SearchProvider } from "./context/SearchContext";
+
+import { useSearchContext } from "./context/SearchContext";
 
 function AppContent() {
   const { theme } = useTheme();
-
+  const { data } = useSearchContext();
   return (
     <div className={`App sansSerif ${theme}`}>
       <main className="main-container">
         <Header />
+        <SearchField />
 
-        <SearchProvider>
-          <SearchField />
-
+        {data ? (
           <SearchResult>
             <Heading />
             <Body />
+            <Footer />
           </SearchResult>
+        ) : (
+          <DefaultPage />
+        )}
 
-          <Footer />
-        </SearchProvider>
         {/* <NoResultFound /> */}
       </main>
     </div>
@@ -41,7 +44,9 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <AppContent />
+      <SearchProvider>
+        <AppContent />
+      </SearchProvider>
     </ThemeProvider>
   );
 }
