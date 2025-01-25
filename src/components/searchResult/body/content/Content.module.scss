@@ -54,7 +54,8 @@
 
   .example {
     color: c.$gray-1;
-    list-style-type: none;
+    margin-top: 13px;
+    font-style: italic;
   }
 
   .list_data::before {
@@ -80,24 +81,27 @@
   display: inline-block;
   @include t.bodyMedium(1rem);
 
-  p {
-    display: inline;
-    margin-right: 1.5em;
-  }
-
-  p:first-child {
+  .footer_heading {
     color: c.$gray-1;
+    font-weight: 700;
+    margin-bottom: 13px;
   }
 
-  p:last-child {
+  .synonyms_container {
     color: c.$violet;
     font-weight: 700;
-  }
+    display: flex;
+    flex-wrap: wrap;
 
-  p:last-child:hover {
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-color: c.$violet;
+    .synonyms {
+      list-style: none;
+      margin-right: 1em;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 
   @media (min-width: 768px) {

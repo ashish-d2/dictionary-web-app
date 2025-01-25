@@ -1,8 +1,21 @@
 import styles from "./Content.module.scss";
 import { useTheme } from "../../../../context/ThemeContext";
 
-const Content = function () {
+// type import
+import { Meanings } from "./../../../../context/SearchContext";
+
+// context import
+import { useSearchContext } from "./../../../../context/SearchContext";
+
+type ComponentProps = {
+  contentData: Meanings;
+};
+
+const Content: React.FC<ComponentProps> = function ({ contentData }) {
   const { theme } = useTheme();
+  const { getData } = useSearchContext();
+
+  console.log(contentData);
 
   return (
     <>
@@ -12,7 +25,7 @@ const Content = function () {
             theme === "light" ? "text-light" : "text-dark"
           }`}
         >
-          noun
+          {contentData.partOfSpeech}
         </h2>
         <div className={styles.line}></div>
       </div>
@@ -24,26 +37,34 @@ const Content = function () {
             styles.list
           }`}
         >
-          <li className={styles.list_data}>
-            (etc.) A set of keys used to operate a typewriter, computer etc.
-          </li>
-          <li className={styles.example}>
-            A component of many instruments including the piano, organ, and
-            harpsichord consisting of usually black and white keys that cause
-            different tones to be produced when struck.
-          </li>
-          <li className={styles.list_data}>
-            A device with keys of a musical keyboard, used to control electronic
-            sound-producing devices which may be built into or separate from the
-            keyboard device.
-          </li>
+          {contentData.definitions.map((definition, index) => (
+            <li key={index} className={styles.list_data}>
+              <p>{definition.definition}</p>
+              {definition.example && (
+                <p className={styles.example}>{definition.example}</p>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
 
-      <div className={styles.footer}>
-        <p>Synonyms</p>
-        <p>electronic keyboard</p>
-      </div>
+      {contentData.synonyms.length > 0 && (
+        <div className={styles.footer}>
+          <p className={styles.footer_heading}>Synonyms</p>
+
+          <ul className={styles.synonyms_container}>
+            {contentData.synonyms.map((word, index) => (
+              <li
+                key={index}
+                className={styles.synonyms}
+                onClick={() => getData(word)}
+              >
+                {word}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </>
   );
 };

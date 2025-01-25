@@ -13,17 +13,18 @@ type MainAPIOutput = {
   sourceUrls: string[];
 };
 
-type Meanings = {
+export type Meanings = {
   partOfSpeech: string;
   definitions: Definition[];
   synonyms: string[];
   antonyms: string[];
 };
 
-type Definition = {
+export type Definition = {
   definition: string;
   synonyms: string[];
   antonyms: string[];
+  example?: string;
 };
 
 // creating search context
