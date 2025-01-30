@@ -3,8 +3,13 @@
   margin-top: 2em;
   font-weight: 700;
   opacity: 0.5;
+  transition: color 0.3s ease;
 
   p {
     text-align: center;
   }
+}
+
+.default_dark {
+  color: #fff;
 }

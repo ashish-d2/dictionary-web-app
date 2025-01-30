@@ -11,8 +11,8 @@ const Body = function () {
   return (
     <div className={`sansSerif ${styles.body}`}>
       {data
-        ? data.meanings.map((meaning) => (
-            <Content contentData={meaning} key={meaning.partOfSpeech} />
+        ? data.meanings.map((meaning, index) => (
+            <Content contentData={meaning} key={index} />
           ))
         : ""}
     </div>

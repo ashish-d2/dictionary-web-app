@@ -35,7 +35,7 @@ function AppContent() {
           ""
         )}
 
-        {data || error.status ? "" : <DefaultPage />}
+        {data || error.status ? "" : <DefaultPage theme={theme} />}
 
         {error.status ? (
           <NoResultFound
