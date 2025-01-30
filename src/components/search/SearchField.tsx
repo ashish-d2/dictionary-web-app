@@ -10,12 +10,23 @@ export default function SearchField() {
   const { theme } = useTheme();
   const { getData } = useSearchContext();
   const [isFocused, setIsFocused] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(false);
 
+  // search field ref
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  // function to get input form searchField and display error message when searchField is empty
   const handleSearchBtnClick = function () {
     if (!inputRef.current) return;
-    if (inputRef.current.value === "") return;
+
+    // checking if user entered value is empty. If empty then updating isEmpty state
+    if (inputRef.current.value === "") {
+      setIsEmpty(true);
+      return;
+    }
+
+    // if user enterd some valid value and if isEmpty state is true then setting it back to false
+    if (isEmpty) setIsEmpty(false);
 
     getData(inputRef.current.value);
   };
@@ -25,7 +36,7 @@ export default function SearchField() {
       <div
         className={`${styles.search} ${
           theme === "dark" ? styles.search_dt : ""
-        } ${isFocused ? styles.focused : ""}`}
+        } ${isFocused ? styles.focused : ""} ${isEmpty ? styles.error : ""}`}
       >
         <input
           type="text"
@@ -47,7 +58,11 @@ export default function SearchField() {
         </button>
       </div>
 
-      {/* <span className={styles.errorMessage}>Whoops, can’t be empty…</span> */}
+      {isEmpty ? (
+        <span className={styles.errorMessage}>Whoops, can’t be empty…</span>
+      ) : (
+        ""
+      )}
     </>
   );
 }

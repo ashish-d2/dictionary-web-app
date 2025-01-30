@@ -8,7 +8,7 @@ import Body from "./components/searchResult/body/Body";
 import Footer from "./components/footer/Footer";
 import DefaultPage from "./components/defaultPage/DefaultPage";
 
-// import NoResultFound from "./components/noResultFound/NoResultFound";
+import NoResultFound from "./components/noResultFound/NoResultFound";
 
 // Context import
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
@@ -18,24 +18,34 @@ import { useSearchContext } from "./context/SearchContext";
 
 function AppContent() {
   const { theme } = useTheme();
-  const { data } = useSearchContext();
+  const { data, error } = useSearchContext();
   return (
     <div className={`App sansSerif ${theme}`}>
       <main className="main-container">
         <Header />
         <SearchField />
 
-        {data ? (
+        {data && !error.status ? (
           <SearchResult>
             <Heading />
             <Body />
             <Footer />
           </SearchResult>
         ) : (
-          <DefaultPage />
+          ""
         )}
 
-        {/* <NoResultFound /> */}
+        {data || error.status ? "" : <DefaultPage />}
+
+        {error.status ? (
+          <NoResultFound
+            title={error.title}
+            message={error.message}
+            theme={theme}
+          />
+        ) : (
+          ""
+        )}
       </main>
     </div>
   );

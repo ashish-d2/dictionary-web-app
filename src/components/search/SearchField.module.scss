@@ -37,7 +37,7 @@
 }
 
 .error {
-  outline: 1px solid c.$orange;
+  outline: 1px solid c.$orange !important;
 }
 
 .errorMessage {
@@ -92,4 +92,9 @@
       font-weight: 700;
     }
   }
+}
+
+.searchBtn {
+  height: 100%;
+  cursor: pointer;
 }

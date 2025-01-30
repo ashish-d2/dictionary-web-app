@@ -17,6 +17,11 @@
   .heading {
     font-size: 1rem;
     margin-bottom: 1.5em;
+    transition: color 0.2s ease;
+  }
+
+  .heading_dark {
+    color: #fff;
   }
 
   .message {
