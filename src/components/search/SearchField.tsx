@@ -15,8 +15,28 @@ export default function SearchField() {
   // search field ref
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  // function to get input form searchField and display error message when searchField is empty
   const handleSearchBtnClick = function () {
+    // function to get input form searchField and display error message when searchField is empty
+    if (!inputRef.current) return;
+
+    // checking if user entered value is empty. If empty then updating isEmpty state
+    if (inputRef.current.value === "") {
+      setIsEmpty(true);
+      return;
+    }
+
+    // if user enterd some valid value and if isEmpty state is true then setting it back to false
+    if (isEmpty) setIsEmpty(false);
+
+    getData(inputRef.current.value);
+  };
+
+  const handleKeyPress = function (
+    event: React.KeyboardEvent<HTMLInputElement>
+  ) {
+    // called when user uses keyboard "enter key" for submitting form
+    if (event.key !== "Enter") return;
+
     if (!inputRef.current) return;
 
     // checking if user entered value is empty. If empty then updating isEmpty state
@@ -48,6 +68,7 @@ export default function SearchField() {
           } sansSerif`}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          onKeyDown={(e) => handleKeyPress(e)}
           ref={inputRef}
         />
         <button
