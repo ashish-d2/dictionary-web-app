@@ -1,5 +1,5 @@
 .default {
-  font-size: 1.5rem;
+  font-size: 0.875rem;
   margin-top: 2em;
   font-weight: 700;
   opacity: 0.5;
@@ -12,4 +12,10 @@
 
 .default_dark {
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .default {
+    font-size: 1.125rem;
+  }
 }
