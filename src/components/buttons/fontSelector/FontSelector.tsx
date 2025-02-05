@@ -5,9 +5,13 @@ import { useTheme } from "../../../context/ThemeContext";
 
 import { ReactComponent as ArrowLogo } from "./../../../assets/images/icon-arrow-down.svg";
 
+// Context import
+import { useFontContext } from "../../../context/FontContext";
+
 const FontSelector = function () {
   const { theme } = useTheme();
   const [displayDropDown, setDisplayDropDown] = useState<boolean>(false);
+  const { updateCurrentFont } = useFontContext();
 
   // ref for fontselector dialogbox
   const fontSelector = useRef<HTMLDivElement>(null);
@@ -25,8 +29,6 @@ const FontSelector = function () {
         fontSelector.current &&
         fontSelector.current.contains(event.target as Node)
       ) {
-        console.log("inside dialog box");
-        console.log(event.target);
       } else {
         console.log("outside dialog box");
         // disable font-selector dropdown
@@ -46,6 +48,13 @@ const FontSelector = function () {
       document.removeEventListener("mousedown", handleClickEvent);
     };
   }, []);
+
+  const handleFont = function (event: React.MouseEvent<HTMLDivElement>) {
+    // function to find which font is clicked (which p tag has been clicked)
+    const target = event.target as HTMLElement;
+
+    updateCurrentFont(target.className);
+  };
 
   return (
     <div
@@ -68,6 +77,7 @@ const FontSelector = function () {
         className={`${styles.fonts} ${
           theme === "light" ? styles.font_light : styles.font_dark
         } ${displayDropDown ? styles.active : ""}`}
+        onClick={handleFont}
       >
         <p className="sans-Serif">Sans Serif</p>
         <p className="serif">Serif</p>

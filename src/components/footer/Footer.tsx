@@ -13,7 +13,7 @@ const Footer = function () {
   return (
     <div className={styles.footer}>
       <div className={styles.divider}></div>
-      <div className={`sansSerif ${styles.source_container}`}>
+      <div className={`${styles.source_container}`}>
         <p className={styles.source}>Source</p>
         {data && (
           <a

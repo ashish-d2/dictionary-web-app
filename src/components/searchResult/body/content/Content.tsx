@@ -18,11 +18,7 @@ const Content: React.FC<ComponentProps> = function ({ contentData }) {
   return (
     <>
       <div className={styles.subHeading}>
-        <h2
-          className={`sansSerif ${
-            theme === "light" ? "text-light" : "text-dark"
-          }`}
-        >
+        <h2 className={`${theme === "light" ? "text-light" : "text-dark"}`}>
           {contentData.partOfSpeech}
         </h2>
         <div className={styles.line}></div>

@@ -13,14 +13,20 @@ import NoResultFound from "./components/noResultFound/NoResultFound";
 // Context import
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import { SearchProvider } from "./context/SearchContext";
+import { FontProvider } from "./context/FontContext";
 
 import { useSearchContext } from "./context/SearchContext";
+import { useFontContext } from "./context/FontContext";
 
 function AppContent() {
   const { theme } = useTheme();
   const { data, error } = useSearchContext();
+  const { font } = useFontContext();
+
   return (
-    <div className={`App sansSerif ${theme}`}>
+    <div
+      className={`App ${font === "sans-Serif" ? "sansSerif" : font} ${theme}`}
+    >
       <main className="main-container">
         <Header />
         <SearchField />
@@ -54,9 +60,11 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <SearchProvider>
-        <AppContent />
-      </SearchProvider>
+      <FontProvider>
+        <SearchProvider>
+          <AppContent />
+        </SearchProvider>
+      </FontProvider>
     </ThemeProvider>
   );
 }

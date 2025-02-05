@@ -3,12 +3,14 @@ import styles from "./SearchField.module.scss";
 import { useState, useRef } from "react";
 import { useTheme } from "./../../context/ThemeContext";
 import { useSearchContext } from "../../context/SearchContext";
+import { useFontContext } from "../../context/FontContext";
 
 import { ReactComponent as SearchBtn } from "./../../assets/images/icon-search.svg";
 
 export default function SearchField() {
   const { theme } = useTheme();
   const { getData } = useSearchContext();
+  const { font } = useFontContext();
   const [isFocused, setIsFocused] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
 
@@ -65,7 +67,7 @@ export default function SearchField() {
             theme === "light" ? "text-light" : "text-dark"
           } ${
             theme === "light" ? styles.searchField_lt : styles.searchField_dt
-          } sansSerif`}
+          } ${font === "sans-Serif" ? "sansSerif" : font}`}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
           onKeyDown={(e) => handleKeyPress(e)}

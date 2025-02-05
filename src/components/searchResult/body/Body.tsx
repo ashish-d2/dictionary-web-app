@@ -9,7 +9,7 @@ const Body = function () {
   const { data } = useSearchContext();
 
   return (
-    <div className={`sansSerif ${styles.body}`}>
+    <div className={` ${styles.body}`}>
       {data
         ? data.meanings.map((meaning, index) => (
             <Content contentData={meaning} key={index} />
