@@ -31,7 +31,7 @@ function AppContent() {
         <Header />
         <SearchField />
 
-        {data && !error.status ? (
+        {data && !error.error ? (
           <SearchResult>
             <Heading />
             <Body />
@@ -41,12 +41,12 @@ function AppContent() {
           ""
         )}
 
-        {data || error.status ? "" : <DefaultPage theme={theme} />}
+        {data || error.error ? "" : <DefaultPage theme={theme} />}
 
-        {error.status ? (
+        {error.error ? (
           <NoResultFound
-            title={error.title}
-            message={error.message}
+            title={error.errorTitle}
+            message={error.errorMessage}
             theme={theme}
           />
         ) : (
