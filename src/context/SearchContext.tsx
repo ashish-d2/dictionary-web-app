@@ -5,6 +5,7 @@ interface searchContextType {
   data: MainAPIOutput | undefined;
   getData: (value: string) => void;
   error: ApiError;
+  loading: boolean;
 }
 
 // API Error type
@@ -56,9 +57,13 @@ const SearchProvider: React.FC<{ children: ReactNode }> = function ({
     errorMessage: "",
     resolution: "",
   });
+  // state to track loading state
+  const [loading, setLoading] = useState<boolean>(false);
 
   // getting data form API using async await
   const getData = async function (word: string) {
+    setLoading(true);
+
     try {
       const response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
@@ -79,7 +84,6 @@ const SearchProvider: React.FC<{ children: ReactNode }> = function ({
       // if data is fetched successfully then update data state
       const fetchedData = await response.json();
       setData(fetchedData[0]);
-
       // if data is successfully fetched and the error state is true; then set it to false. This will remove the error message component <NoResultFound />
       if (error.error)
         setError({
@@ -103,6 +107,8 @@ const SearchProvider: React.FC<{ children: ReactNode }> = function ({
           resolution: "",
         });
       }
+    } finally {
+      setLoading(false);
     }
   };
   console.log(error);
@@ -156,7 +162,7 @@ const SearchProvider: React.FC<{ children: ReactNode }> = function ({
   // };
 
   return (
-    <SearchContext.Provider value={{ data, getData, error }}>
+    <SearchContext.Provider value={{ data, getData, error, loading }}>
       {children}
     </SearchContext.Provider>
   );

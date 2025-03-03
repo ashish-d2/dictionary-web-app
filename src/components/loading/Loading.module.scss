@@ -1,0 +1,19 @@
+@use "./../../scss/colors" as c;
+
+.loading {
+  margin-top: 1.125em;
+  margin-left: 0.5em;
+
+  p {
+    color: c.$lt-primary-black;
+    transition: color 0.3s ease;
+    font-size: 1.125rem;
+  }
+}
+
+.loading_dark {
+  p {
+    transition: color 0.3s ease;
+    color: c.$white;
+  }
+}
