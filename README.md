@@ -6,6 +6,11 @@ A sleek and simple **Dictionary Web App** built with **React** that lets you sea
 
 ---
 
+## Screenshots
+![Light Theme](./screenshorts/Dictionary-LightTheme.png)
+
+![Dark Theme](./screenshorts/Dictionary-DarkTheme.png)
+
 ## 🌟 Features
 - 🔍 **Instant Search:** Type any word and get its definition right away  
 - 🗣️ **Phonetics & Pronunciation:** Listen to how the word is pronounced  
